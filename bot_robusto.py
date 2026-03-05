@@ -12,6 +12,28 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
+# Paths
+BASE_DIR = Path(__file__).parent
+CONFIG_FILE = BASE_DIR / "config.json"
+API_CONFIG_FILE = BASE_DIR / "apis_config.json"
+LOGS_DIR = BASE_DIR / "logs"
+POSTS_DIR = BASE_DIR / "posts"
+
+# Asegurar directorios
+LOGS_DIR.mkdir(exist_ok=True)
+POSTS_DIR.mkdir(exist_ok=True)
+
+# Logs - Configurar PRIMERO
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    level=logging.INFO,
+    handlers=[
+        logging.FileHandler(LOGS_DIR / f"bot_{datetime.now().strftime('%Y%m%d')}.log"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
 # Instalar dependencias si faltan
 try:
     from telegram import Bot, Update, InlineKeyboardButton, InlineKeyboardMarkup, BotCommand
@@ -56,28 +78,6 @@ try:
     from engagement_bot import EngagementBot
 except ImportError:
     logger.warning("engagement_bot.py no encontrado")
-
-# Paths
-BASE_DIR = Path(__file__).parent
-CONFIG_FILE = BASE_DIR / "config.json"
-API_CONFIG_FILE = BASE_DIR / "apis_config.json"
-LOGS_DIR = BASE_DIR / "logs"
-POSTS_DIR = BASE_DIR / "posts"
-
-# Asegurar directorios
-LOGS_DIR.mkdir(exist_ok=True)
-POSTS_DIR.mkdir(exist_ok=True)
-
-# Logs - Configurar PRIMERO
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO,
-    handlers=[
-        logging.FileHandler(LOGS_DIR / f"bot_{datetime.now().strftime('%Y%m%d')}.log"),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
 
 
 # ========== UTILIDADES DE FORMATO ==========
@@ -1410,14 +1410,18 @@ La inteligencia artificial está transformando cómo trabajamos con {tema}.
         for handler in self.get_handlers():
             self.application.add_handler(handler)
 
-        # Configurar comandos
-        async def setup_bot():
-            await self.set_commands(self.application.bot)
-
-        self.application.post_init = setup_bot
-
         # Ejecutar
         print("✅ Bot iniciado. Presiona Ctrl+C para detener.")
+        
+        # Configurar comandos antes de iniciar polling
+        async def setup_bot():
+            await self.set_commands(self.application.bot)
+        
+        # Configurar comandos inmediatamente
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(setup_bot())
+        
         print("📱 Menú de comandos configurado en Telegram")
         self.application.run_polling(allowed_updates=Update.ALL_TYPES)
 

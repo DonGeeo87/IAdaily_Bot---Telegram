@@ -12,12 +12,12 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 try:
-    from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, InputPollOption
+    from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
     from telegram.ext import Application, CommandHandler, ContextTypes, PollAnswerHandler
 except ImportError:
     print("Instalando python-telegram-bot...")
     os.system("pip install python-telegram-bot")
-    from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup, InputPollOption
+    from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
     from telegram.ext import Application, CommandHandler, ContextTypes, PollAnswerHandler
 
 # Paths
