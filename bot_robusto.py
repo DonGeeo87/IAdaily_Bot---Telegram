@@ -1107,6 +1107,56 @@ La inteligencia artificial está transformando cómo trabajamos con {tema}.
             else:
                 await update.message.reply_text(error_msg)
 
+    # ========== MINI APP GAME COMMANDS ==========
+
+    async def mini_app_game(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Comando /juego - IA Clicker Empire Mini App"""
+        try:
+            from mini_app_handler import game_command
+            await game_command(update, context)
+        except ImportError:
+            await update.message.reply_text(
+                "🎮 **IA Clicker Empire**\n\n"
+                "La Mini App está en mantenimiento. ¡Prueba pronto!",
+                parse_mode='Markdown'
+            )
+
+    async def mini_app_trivia(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Comando /trivia - Trivia diaria"""
+        try:
+            from mini_app_handler import trivia_command
+            await trivia_command(update, context)
+        except ImportError:
+            await update.message.reply_text(
+                "🧮 **Trivia IA**\n\n"
+                "La trivia está en mantenimiento. ¡Prueba pronto!",
+                parse_mode='Markdown'
+            )
+
+    async def mini_app_ranking(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Comando /ranking - Leaderboard"""
+        try:
+            from mini_app_handler import leaderboard_command
+            await leaderboard_command(update, context)
+        except ImportError:
+            await update.message.reply_text(
+                "🏆 **Ranking**\n\n"
+                "El ranking está en mantenimiento. ¡Prueba pronto!",
+                parse_mode='Markdown'
+            )
+
+    async def mini_app_profile(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Comando /perfil - Perfil del jugador"""
+        try:
+            from mini_app_handler import profile_command
+            await profile_command(update, context)
+        except ImportError:
+            await update.message.reply_text(
+                "👤 **Tu Perfil**\n\n"
+                "El perfil está en mantenimiento. ¡Prueba pronto!",
+                parse_mode='Markdown'
+            )
+
     # ========== PANEL DE MODELOS QWEN/WAN (SOLO OWNER) ==========
 
     @require_permission(100)
@@ -1319,10 +1369,10 @@ La inteligencia artificial está transformando cómo trabajamos con {tema}.
         )
 
     # ========== GESTIÓN ==========
-    
+
     def get_handlers(self):
         """Obtener todos los handlers"""
-        return [
+        handlers = [
             # Comandos principales
             CommandHandler('start', self.start),
             CommandHandler('recomendar', self.recomendar),
@@ -1349,6 +1399,13 @@ La inteligencia artificial está transformando cómo trabajamos con {tema}.
             CommandHandler('log', self.log_command),
             CommandHandler('analytics', self.analytics_command),
 
+            # Mini App Game - IA Clicker Empire
+            CommandHandler('juego', self.mini_app_game),
+            CommandHandler('game', self.mini_app_game),
+            CommandHandler('trivia', self.mini_app_trivia),
+            CommandHandler('ranking', self.mini_app_ranking),
+            CommandHandler('perfil', self.mini_app_profile),
+
             # Modelos Qwen/Wan (Solo Owner)
             CommandHandler('modelos', self.modelos_command),
             CommandHandler('usarmodelo', self.usar_modelo),
@@ -1366,6 +1423,15 @@ La inteligencia artificial está transformando cómo trabajamos con {tema}.
             # Callbacks de botones inline (SIN patrón para capturar todos)
             CallbackQueryHandler(self.button_callback),
         ]
+        
+        # Importar handlers adicionales de mini_app_handler
+        try:
+            from mini_app_handler import get_handlers as get_mini_app_handlers
+            handlers.extend(get_mini_app_handlers())
+        except ImportError:
+            logger.warning("mini_app_handler.py no encontrado, usando handlers básicos")
+        
+        return handlers
     
     async def cleanup(self):
         """Limpieza al cerrar"""
@@ -1375,6 +1441,9 @@ La inteligencia artificial está transformando cómo trabajamos con {tema}.
         """Configurar menú de comandos en Telegram"""
         commands = [
             BotCommand('start', '🏠 Menú principal'),
+            BotCommand('juego', '🎮 IA Clicker Empire (Mini App)'),
+            BotCommand('trivia', '🧠 Trivia diaria de IA'),
+            BotCommand('ranking', '🏆 Ranking global'),
             BotCommand('recomendar', '🤖 IA recomendada del día'),
             BotCommand('noticias', '📰 Noticia de IA aleatoria'),
             BotCommand('prompts', '🎯 Prompt para alguna IA'),
