@@ -1,7 +1,7 @@
 # 🤖 IA Daily Bot - Configuración para fly.io
 # Documento: https://fly.io/docs/reference/configuration/
 
-app = "iadaily-bot"  # ⚠️ CAMBIA ESTO con tu nombre único en fly.io
+app = "iadaily-bot-geeo"  # Nombre único en fly.io
 primary_region = "mad"  # Madrid (más cercano a Latinoamérica/España)
 
 # Variables de entorno
