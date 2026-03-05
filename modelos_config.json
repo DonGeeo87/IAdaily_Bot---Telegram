@@ -1,0 +1,20 @@
+{
+  "modelos_qwen": [
+    {"nombre": "qwen3.5-397b-a17b", "tokens": 1000000, "vence": "2026-05-17", "tipo": "texto"},
+    {"nombre": "qwen3.5-122b-a10b", "tokens": 1000000, "vence": "2026-05-24", "tipo": "texto"},
+    {"nombre": "qwen3.5-35b-a3b", "tokens": 1000000, "vence": "2026-05-24", "tipo": "texto"},
+    {"nombre": "qwen3.5-27b", "tokens": 1000000, "vence": "2026-05-24", "tipo": "texto"},
+    {"nombre": "qwen3.5-plus", "tokens": 1000000, "vence": "2026-05-17", "tipo": "texto"},
+    {"nombre": "qwen3.5-flash", "tokens": 1000000, "vence": "2026-05-24", "tipo": "texto"},
+    {"nombre": "qwen3-max", "tokens": 1000000, "vence": "2026-04-26", "tipo": "texto"},
+    {"nombre": "qwen3-coder-next", "tokens": 1000000, "vence": "2026-05-05", "tipo": "codigo"},
+    {"nombre": "qwen3-vl-plus", "tokens": 1000000, "vence": "2026-03-19", "tipo": "vision"},
+    {"nombre": "qwen3-vl-flash", "tokens": 1000000, "vence": "2026-04-26", "tipo": "vision"},
+    {"nombre": "qwen-plus-character", "tokens": 1000000, "vence": "2026-04-28", "tipo": "roleplay"},
+    {"nombre": "qwen-flash-character", "tokens": 1000000, "vence": "N/A", "tipo": "roleplay"}
+  ],
+  "modelos_wan": [
+    {"nombre": "wan2.2-kf2v-flash", "usos": 50, "vence": "2026-04-06", "tipo": "video"}
+  ],
+  "uso_registrado": {}
+}

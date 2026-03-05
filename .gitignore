@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+logs/
+*.log
+
+# Posts generados
+posts/
+campaign/
+social_posts/
+
+# Configuración sensible
+.env
+.env.local
+config.local.json
+apis_config.local.json
+*.local.json
+
+# Secrets
+secrets/
+*.key
+*.pem
+
+# Docker
+docker-compose.override.yml
+
+# Fly.io
+fly.toml.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporales
+tmp/
+temp/
+*.tmp
+*.bak

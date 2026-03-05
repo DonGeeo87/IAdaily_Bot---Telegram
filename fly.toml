@@ -1,0 +1,52 @@
+# 🤖 IA Daily Bot - Configuración para fly.io
+# Documento: https://fly.io/docs/reference/configuration/
+
+app = "iadaily-bot"  # ⚠️ CAMBIA ESTO con tu nombre único en fly.io
+primary_region = "mad"  # Madrid (más cercano a Latinoamérica/España)
+
+# Variables de entorno
+# ⚠️ Los secrets sensibles se configuran con: fly secrets set
+[env]
+  TELEGRAM_CHANNEL_ID = "@IADailyChannel"
+  TELEGRAM_ADMIN_USERS = "2036304183"
+  TIMEZONE = "America/Mexico_City"
+  LOG_LEVEL = "INFO"
+
+# Build del Dockerfile
+[build]
+  dockerfile = "Dockerfile"
+
+# Los bots de Telegram usan polling, no necesitan HTTP server
+# Descomentar solo si agregas un webhook o dashboard web
+# [http_service]
+#   internal_port = 8080
+#   force_https = true
+#   auto_stop_machines = false
+#   auto_start_machines = true
+
+# Tamaño de la máquina (free tier)
+[vm]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+
+# Reinicio automático si el proceso falla
+[[restart]]
+  policy = "always"
+  retries = 3
+
+# Volúmenes para persistencia (opcional - para guardar logs/posts)
+# Descomentar si necesitas persistencia:
+# [[mounts]]
+#   source = "iadaily_data"
+#   destination = "/app"
+#   initial_size = "1gb"
+
+# Health check (opcional)
+# Los bots de Telegram no tienen endpoint HTTP, usamos un check básico
+[checks]
+  [checks.bot_alive]
+    # Check básico de que el proceso esté corriendo
+    interval = "60s"
+    timeout = "10s"
+    grace_period = "120s"

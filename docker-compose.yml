@@ -1,0 +1,59 @@
+# 🤖 IA Daily Bot - Docker Compose para desarrollo local
+# Usar: docker-compose up -d
+
+version: '3.8'
+
+services:
+  # Bot principal (comandos de Telegram)
+  bot:
+    build: .
+    container_name: iadaily-bot
+    restart: unless-stopped
+    command: python bot_robusto.py
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHANNEL_ID=${TELEGRAM_CHANNEL_ID}
+      - TELEGRAM_ADMIN_USERS=${TELEGRAM_ADMIN_USERS}
+      - TIMEZONE=${TIMEZONE:-America/Mexico_City}
+    volumes:
+      - ./logs:/app/logs
+      - ./posts:/app/posts
+    networks:
+      - iadaily-network
+
+  # Scheduler (publicación automática)
+  scheduler:
+    build: .
+    container_name: iadaily-scheduler
+    restart: unless-stopped
+    command: python master_scheduler.py
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHANNEL_ID=${TELEGRAM_CHANNEL_ID}
+      - TIMEZONE=${TIMEZONE:-America/Mexico_City}
+    volumes:
+      - ./logs:/app/logs
+      - ./posts:/app/posts
+    depends_on:
+      - bot
+    networks:
+      - iadaily-network
+
+  # Content Generator (opcional, para generar contenido periódico)
+  content:
+    build: .
+    container_name: iadaily-content
+    restart: unless-stopped
+    command: python content_generator.py
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TIMEZONE=${TIMEZONE:-America/Mexico_City}
+    volumes:
+      - ./posts:/app/posts
+      - ./logs:/app/logs
+    networks:
+      - iadaily-network
+
+networks:
+  iadaily-network:
+    driver: bridge

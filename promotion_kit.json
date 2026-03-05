@@ -1,0 +1,61 @@
+{
+  "links": {
+    "telegram_direct": "https://t.me/IADailyChannel",
+    "whatsapp": "https://wa.me/?text=Únete%20a%20https://t.me/IADailyChannel%20para%20recibir%20contenido%20de%20IA%20🤖",
+    "twitter": "https://twitter.com/intent/tweet?text=Únete%20a%20https://t.me/IADailyChannel%20🤖%20Contenido%20diario%20de%20Inteligencia%20Artificial%20%23IA",
+    "facebook": "https://www.facebook.com/sharer/sharer.php?u=https://t.me/IADailyChannel",
+    "linkedin": "https://www.linkedin.com/sharing/share-offsite/?url=https://t.me/IADailyChannel",
+    "email": "mailto:?subject=Canal%20de%20IA%20Gratis&body=Únete%20a%20https://t.me/IADailyChannel"
+  },
+  "messages": [
+    "\n🤖 ¿Quieres estar al día con la IA?\n\nÚnete a **@IADailyChannel** \n\n📰 Recibe 4 veces al día:\n🛠️ Herramientas nuevas\n📰 Noticias importantes\n💡 Tips y prompts\n📦 Recursos gratuitos\n\n¡Totalmente GRATIS! 👉 t.me/IADailyChannel\n            ",
+    "\n🚀 La IA avanza rápido... ¿y tú?\n\nNo te quedes atrás. En **@IADailyChannel** te resumimos lo importante:\n\n✅ Solo contenido de valor\n✅ Sin spam\n✅ 100% Gratis\n\nÚnete ahora: t.me/IADailyChannel\n            ",
+    "\n💡 ¿Sabías que...?\n\nHay herramientas de IA que pueden ahorrarte horas de trabajo.\n\nEn **@IADailyChannel** te mostramos una nueva cada día.\n\n👉 t.me/IADailyChannel\n            ",
+    "\n🎯 Para profesionales ocupados:\n\nNo tienes tiempo de buscar noticias de IA.\n\nNosotros lo hacemos por ti. 4 posts/día. Directo a tu Telegram.\n\n**@IADailyChannel** → t.me/IADailyChannel\n            ",
+    "\n📚 ¿Quieres aprender IA gratis?\n\nEn **@IADailyChannel** compartimos:\n- Cursos gratuitos\n- Herramientas free\n- Prompts listos\n- Recursos exclusivos\n\nTodo en un solo lugar: t.me/IADailyChannel\n            "
+  ],
+  "hashtags": [
+    "#InteligenciaArtificial",
+    "#IA",
+    "#AI",
+    "#MachineLearning",
+    "#DeepLearning",
+    "#ChatGPT",
+    "#OpenAI",
+    "#Tecnologia",
+    "#Innovacion",
+    "#FutureTech",
+    "#AIEspañol",
+    "#PromptEngineering",
+    "#Automatizacion",
+    "#TechNews",
+    "#AIDaily"
+  ],
+  "strategy": {
+    "reddit": {
+      "subreddits": [
+        "r/InteligenciaArtificial",
+        "r/IA",
+        "r/ChatGPT",
+        "r/MachineLearning",
+        "r/artificial"
+      ],
+      "frequency": "1 post/semana",
+      "type": "Contenido de valor + enlace discreto"
+    },
+    "facebook_groups": {
+      "strategy": "Unirse a grupos de IA y tech",
+      "frequency": "2-3 posts/semana",
+      "type": "Compartir contenido útil del canal"
+    },
+    "discord": {
+      "servers": "Servidores de IA y tecnología",
+      "strategy": "Participar activamente y compartir en canales de recursos"
+    },
+    "tiktok": {
+      "strategy": "Videos cortos con tips de IA",
+      "frequency": "1 video/día",
+      "cta": "Link en bio hacia Telegram"
+    }
+  }
+}

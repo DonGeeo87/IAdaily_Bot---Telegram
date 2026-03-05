@@ -1,0 +1,24 @@
+# Dependencias principales para el bot de Telegram
+python-telegram-bot==20.7
+aiohttp==3.9.1
+schedule==1.2.1
+
+# APIs de IA
+openai==1.6.1
+anthropic==0.8.1
+google-generativeai==0.3.2
+
+# Utilidades
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+feedparser==6.0.10
+
+# Logging y monitoreo
+python-json-logger==2.0.7
+
+# Para manejo de archivos y paths
+pathlib2==2.3.7.post1
+
+# Utilidades adicionales
+pytz==2023.3

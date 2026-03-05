@@ -1,0 +1,7 @@
+{
+  "api_key": "sk-1f839d3b42254149b27130f2b0e6a4ed",
+  "enabled": true,
+  "model": "qwen-turbo",
+  "owner_only": true,
+  "description": "API de Qwen para IA real en el bot - Solo owner"
+}

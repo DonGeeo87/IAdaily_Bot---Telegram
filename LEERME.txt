@@ -1,0 +1,39 @@
+📦 BACKUP DE IA DAILY BOT
+=========================
+
+Este backup contiene:
+✅ Todo el código Python (.py)
+✅ Scripts de shell (.sh)
+✅ Documentación (.md)
+✅ Archivos de configuración (.json)
+
+⚠️ IMPORTANTE:
+Los archivos de configuración contienen datos sensibles:
+- config.json: Token del bot
+- apis_config.json: API keys
+- security.json: Usuarios y permisos
+
+📋 PRÓXIMOS PASOS:
+
+1. Transferir esta carpeta a tu laptop:
+   - USB
+   - Google Drive
+   - SCP/SFTP
+   - Email (si no es muy grande)
+
+2. En la laptop:
+   a) Crear entorno virtual: python -m venv venv
+   b) Activar: source venv/bin/activate
+   c) Instalar: pip install -r requirements.txt
+   d) Configurar archivos .json con tus credenciales
+
+3. Para subir a GitHub:
+   cd telegram-ia-bot-backup
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin TU_REPO_URL
+   git push -u origin main
+
+📞 Tu chat_id: 2036304183
+

@@ -1,0 +1,39 @@
+{
+  "_comment": "⚠️  En producción (fly.io), usa variables de entorno en lugar de este archivo",
+  "_env_info": "TELEGRAM_BOT_TOKEN, TELEGRAM_CHANNEL_ID, TELEGRAM_ADMIN_USERS, TIMEZONE",
+  "telegram": {
+    "bot_token": "8627686733:AAGgyqXtPu1juP1hjGZbb0iIhJWhq2WN324",
+    "channel_id": "@IADailyChannel",
+    "admin_users": [2036304183],
+    "owner_chat_id": 2036304183
+  },
+  "schedule": {
+    "enabled": true,
+    "timezone": "America/Mexico_City",
+    "posts_per_day": 4,
+    "times": ["08:00", "12:00", "16:00", "20:00"]
+  },
+  "content": {
+    "sources": [
+      "https://openai.com/blog/feed",
+      "https://anthropic.com/rss",
+      "https://news.ycombinator.com/newest",
+      "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+    ],
+    "categories": ["herramientas", "noticias", "tips", "recursos"],
+    "language": "es",
+    "include_images": true
+  },
+  "features": {
+    "auto_post": true,
+    "log_activity": true,
+    "retry_on_fail": true,
+    "max_retries": 3,
+    "notify_admin": false
+  },
+  "branding": {
+    "bot_name": "IA Daily",
+    "tagline": "🤖 Tu dosis diaria de Inteligencia Artificial",
+    "footer": "📢 @IADaily_Bot"
+  }
+}

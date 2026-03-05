@@ -1,0 +1,48 @@
+{
+  "credentials": {
+    "client_id": "TU_CLIENT_ID",
+    "client_secret": "TU_CLIENT_SECRET",
+    "username": "TU_USUARIO",
+    "password": "TU_PASSWORD",
+    "user_agent": "IA Daily Bot v1.0 by /u/TU_USUARIO"
+  },
+  "subreddits": [
+    {
+      "name": "InteligenciaArtificial",
+      "min_karma": 0
+    },
+    {
+      "name": "IA",
+      "min_karma": 0
+    },
+    {
+      "name": "ChatGPT",
+      "min_karma": 100
+    },
+    {
+      "name": "artificial",
+      "min_karma": 500
+    },
+    {
+      "name": "MachineLearning",
+      "min_karma": 1000
+    },
+    {
+      "name": "technology",
+      "min_karma": 500
+    },
+    {
+      "name": "technews",
+      "min_karma": 200
+    },
+    {
+      "name": "singularity",
+      "min_karma": 300
+    }
+  ],
+  "posting": {
+    "posts_per_day": 3,
+    "delay_hours": 4,
+    "include_channel_link": true
+  }
+}

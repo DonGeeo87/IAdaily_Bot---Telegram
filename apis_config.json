@@ -1,0 +1,36 @@
+{
+  "gnews": {
+    "api_key": "c8b2e55d18e3c64ac78fcbbbcce94c7d",
+    "enabled": true,
+    "endpoint": "https://gnews.io/api/v4/top-headlines",
+    "rate_limit": "100 req/día",
+    "description": "Noticias de IA en tiempo real"
+  },
+  "huggingface": {
+    "api_key": "",
+    "enabled": false,
+    "endpoint": "https://api-inference.huggingface.co/models/google/flan-t5-large",
+    "model": "google/flan-t5-large",
+    "rate_limit": "30k req/mes",
+    "description": "Generación de contenido con IA"
+  },
+  "pexels": {
+    "api_key": "",
+    "enabled": false,
+    "endpoint": "https://api.pexels.com/v1/search",
+    "rate_limit": "Unlimited",
+    "description": "Imágenes gratis para posts"
+  },
+  "quotable": {
+    "enabled": true,
+    "endpoint": "http://api.quotable.io/random",
+    "rate_limit": "Unlimited",
+    "description": "Frases inspiradoras"
+  },
+  "wikipedia": {
+    "enabled": true,
+    "endpoint": "https://es.wikipedia.org/api/rest_v1/page/random/summary",
+    "rate_limit": "Unlimited",
+    "description": "Artículos aleatorios de Wikipedia"
+  }
+}

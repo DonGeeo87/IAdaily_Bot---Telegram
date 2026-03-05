@@ -1,0 +1,128 @@
+{
+  "fuentes_noticias": [
+    {
+      "nombre": "OpenAI Blog",
+      "url": "https://openai.com/blog/feed",
+      "categoria": "empresas",
+      "activo": true
+    },
+    {
+      "nombre": "Anthropic",
+      "url": "https://www.anthropic.com/rss",
+      "categoria": "empresas",
+      "activo": true
+    },
+    {
+      "nombre": "Google AI",
+      "url": "https://blog.google/technology/ai/feed/",
+      "categoria": "empresas",
+      "activo": true
+    },
+    {
+      "nombre": "Meta AI",
+      "url": "https://ai.meta.com/blog/feed/",
+      "categoria": "empresas",
+      "activo": true
+    },
+    {
+      "nombre": "Microsoft AI",
+      "url": "https://blogs.microsoft.com/ai/feed/",
+      "categoria": "empresas",
+      "activo": true
+    },
+    {
+      "nombre": "Hugging Face",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "categoria": "comunidad",
+      "activo": true
+    },
+    {
+      "nombre": "MIT Technology Review",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/",
+      "categoria": "medios",
+      "activo": true
+    },
+    {
+      "nombre": "Wired AI",
+      "url": "https://www.wired.com/feed/category/ai/latest/rss",
+      "categoria": "medios",
+      "activo": true
+    },
+    {
+      "nombre": "TechCrunch AI",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "categoria": "medios",
+      "activo": true
+    },
+    {
+      "nombre": "The Verge AI",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "categoria": "medios",
+      "activo": true
+    },
+    {
+      "nombre": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/",
+      "categoria": "medios",
+      "activo": true
+    },
+    {
+      "nombre": "VentureBeat AI",
+      "url": "https://venturebeat.com/category/ai/feed/",
+      "categoria": "medios",
+      "activo": true
+    }
+  ],
+  "fuentes_herramientas": [
+    {
+      "nombre": "Product Hunt AI",
+      "url": "https://www.producthunt.com/topics/artificial-intelligence/feed",
+      "categoria": "lanzamientos",
+      "activo": true
+    },
+    {
+      "nombre": "There's An AI For That",
+      "url": "https://theresanaiforthat.com/rss/",
+      "categoria": "directorio",
+      "activo": true
+    },
+    {
+      "nombre": "FutureTools",
+      "url": "https://www.futuretools.io/rss",
+      "categoria": "directorio",
+      "activo": true
+    }
+  ],
+  "fuentes_research": [
+    {
+      "nombre": "arXiv AI",
+      "url": "http://export.arxiv.org/rss/cs.AI",
+      "categoria": "research",
+      "activo": true
+    },
+    {
+      "nombre": "arXiv ML",
+      "url": "http://export.arxiv.org/rss/cs.LG",
+      "categoria": "research",
+      "activo": true
+    },
+    {
+      "nombre": "arXiv CV",
+      "url": "http://export.arxiv.org/rss/cs.CV",
+      "categoria": "research",
+      "activo": true
+    }
+  ],
+  "subreddits": [
+    {"nombre": "r/artificial", "min_karma": 500},
+    {"nombre": "r/MachineLearning", "min_karma": 1000},
+    {"nombre": "r/ChatGPT", "min_karma": 100},
+    {"nombre": "r/InteligenciaArtificial", "min_karma": 0},
+    {"nombre": "r/IA", "min_karma": 0},
+    {"nombre": "r/OpenAI", "min_karma": 200},
+    {"nombre": "r/LocalLLaMA", "min_karma": 300},
+    {"nombre": "r/StableDiffusion", "min_karma": 200},
+    {"nombre": "r/midjourney", "min_karma": 200}
+  ],
+  "categorias": ["empresas", "medios", "comunidad", "lanzamientos", "directorio", "research"]
+}
